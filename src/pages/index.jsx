@@ -2,11 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import tw from 'tailwind.macro'
 import { Parallax } from 'react-spring/renderprops-addons.cjs'
-
 // Components
 import Layout from '../components/Layout'
 import ProjectCard from '../components/ProjectCard'
-
+import SkillCard from '../components/SkillCard'
 // Elements
 import Inner from '../elements/Inner'
 import { Title, BigTitle, Subtitle } from '../elements/Titles'
@@ -16,6 +15,7 @@ import Hero from '../views/Hero'
 import Projects from '../views/Projects'
 import About from '../views/About'
 import Contact from '../views/Contact'
+import Skills from '../views/Skills'
 
 import avatar from '../images/avatar.jpg'
 
@@ -29,6 +29,17 @@ const ProjectsWrapper = styled.div`
   }
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
+    grid-gap: 2rem;
+  }
+`
+
+const SkillsWrapper = styled.div`
+  ${tw`flex flex-wrap justify-between mt-8`};
+  display: grid;
+  grid-gap: 4rem;
+  grid-template-columns: repeat(4, 1fr);
+  @media (max-width: 750px) {
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 2rem;
   }
 `
@@ -63,73 +74,84 @@ const Index = () => (
     <Parallax pages={5}>
       <Hero offset={0}>
         <BigTitle>
-          Hello, <br /> I'm John Doe.
+          Hello, <br /> I'm Devan.
         </BigTitle>
-        <Subtitle>I'm creating noice web experiences for the next generation of consumer-facing companies.</Subtitle>
+        <Subtitle>a developer.</Subtitle>
       </Hero>
+
       <Projects offset={1}>
         <Title>Projects</Title>
         <ProjectsWrapper>
-          <ProjectCard
-            title="Freiheit"
-            link="https://www.behance.net/gallery/58937147/Freiheit"
-            bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
-          >
-            This project is my entry to Adobe's #ChallengeYourPerspective contest.
-          </ProjectCard>
-          <ProjectCard
-            title="Harry Potter"
-            link="https://www.behance.net/gallery/52915793/Harry-Potter"
+              <ProjectCard
+                title="Remote Note"
+                link="http://142.93.22.134:3005"
+                bg="linear-gradient(to right, #D4145A 0%, #FBB03B 100%)"
+              >
+                This is note, reminder, and todo app with SMS integration. So you can just text your notes.
+                <br/> <br/>Developed using React, Node, Express, PostgreSQL, Twilio.
+            </ProjectCard>
+             <ProjectCard
+            title="Sidekicks"
+            link="https://www.github.com/devanskeem/sidekicks"
             bg="linear-gradient(to right, #662D8C 0%, #ED1E79 100%)"
           >
-            I entered the DOCMA 2017 award with this Harry Potter inspired image.
+            An event planner, organizer, and social media website. 
+            <br/> <br/>Developed using React, Node, Express, PostgreSQL, Auth0.
           </ProjectCard>
           <ProjectCard
-            title="Tomb Raider"
-            link="https://www.behance.net/gallery/43907099/Tomb-Raider"
+            title="Chest"
+            link="https://www.github.com/devanskeem/chest"
             bg="linear-gradient(to right, #009245 0%, #FCEE21 100%)"
           >
-            Recreation of a Tomb Raider Wallpaper (Fan Art)
-          </ProjectCard>
-          <ProjectCard
-            title="Eagle"
-            link="https://www.behance.net/gallery/38068151/Eagle"
-            bg="linear-gradient(to right, #D585FF 0%, #00FFEE 100%)"
-          >
-            A fantasy image manipulation relocating the habitat of wild animals.
+            Net worth tracker and investment calculator.
+            <br/> <br/>Developed with React, Node, Express
           </ProjectCard>
         </ProjectsWrapper>
       </Projects>
-      <About offset={3}>
+
+      <Skills offset={2.7}>
+        <Title>Skills</Title>
+        <SkillsWrapper>
+          <SkillCard skill='JavaScript' />
+          <SkillCard skill='HTML' />
+          <SkillCard skill='CSS' />
+          <SkillCard skill='Python' />
+          <SkillCard skill='Java' />
+          <SkillCard skill='C++' />
+          <SkillCard skill='React' />
+          <SkillCard skill='Redux' />
+          <SkillCard skill='Node' />
+          <SkillCard skill='Vue' />
+          <SkillCard skill='GraphQL' />
+          <SkillCard skill='Express' />
+          <SkillCard skill='Relational Database' />
+          <SkillCard skill='PostgreSQL' />
+          <SkillCard skill='SQL' />
+          <SkillCard skill='Git / Github ' />
+        </SkillsWrapper>
+      </Skills>
+
+      <About offset={3.4}>
         <Title>About</Title>
         <AboutHero>
-          <Avatar src={avatar} alt="John Doe" />
+          <Avatar src={avatar} alt="Devan Skeem" />
           <AboutSub>
-            The English language can not fully capture the depth and complexity of my thoughts. So I'm incorporating
-            Emoji into my speech to better express myself. Winky face.
+            I am a full-stack developer with a passion for learning. There is nothing more satisfying to me than visualising something in my mind, then creating it.
           </AboutSub>
         </AboutHero>
-        <AboutDesc>
-          You know the way you feel when you see a picture of two otters holding hands? That's how you're gonna feel
-          every day. My mother cried the day I was born because she knew she’d never be prettier than me. You should
-          make me your campaign manager. I was born for politics. I have great hair and I love lying. Captain? The kids
-          want to know where Paulie the Pigeon is. I told them he got sucked up into an airplane engine, is that all
-          right?
-        </AboutDesc>
       </About>
+
       <Contact offset={4}>
         <Inner>
           <Title>Get in touch</Title>
           <ContactText>
-            Say <a href="mailto:plizNoSp4m@domain.tld">Hi</a> or find me on other platforms:{' '}
-            <a href="https://dribbble.com/LekoArts">Dribbble</a> &{' '}
-            <a href="https://www.instagram.com/lekoarts.de/">Instagram</a>
+            Email <a href="mailto:devskeem@gmail.com">me</a> or find me on other platforms: {' '}
+            <a href="https://www.linkedin.com/in/devanskeem/">LinkedIn</a>{' & '}
+            <a href="https://www.github.com/devanskeem/">Github</a>
           </ContactText>
         </Inner>
         <Footer>
-          &copy; 2019 by Gatsby Starter Portfolio Cara.{' '}
-          <a href="https://github.com/LekoArts/gatsby-starter-portfolio-cara">GitHub Repository</a>. Made by{' '}
-          <a href="https://www.lekoarts.de">LekoArts</a>.
+          @devanskeem
         </Footer>
       </Contact>
     </Parallax>
