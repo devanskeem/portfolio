@@ -109,7 +109,7 @@ const Index = () => (
         </ProjectsWrapper>
       </Projects>
 
-      <Skills offset={2.7}>
+      <Skills offset={2.8}>
         <Title>Skills</Title>
         <SkillsWrapper>
           <SkillCard skill='JavaScript' />
