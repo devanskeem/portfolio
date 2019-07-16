@@ -109,7 +109,7 @@ const Index = () => (
         </ProjectsWrapper>
       </Projects>
 
-      <Skills offset={2.8}>
+      <Skills offset={2.5}>
         <Title>Skills</Title>
         <SkillsWrapper>
           <SkillCard skill='JavaScript' />
@@ -131,7 +131,7 @@ const Index = () => (
         </SkillsWrapper>
       </Skills>
 
-      <About offset={3.4}>
+      <About offset={3.2}>
         <Title>About</Title>
         <AboutHero>
           <Avatar src={avatar} alt="Devan Skeem" />
